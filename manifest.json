@@ -1,8 +1,14 @@
 {
-    "name": "Red Krunker UI",
+    "name": "Custom Krunker UI (Red)",
 	"version": "1.0",
 	"manifest_version": 2,
     "description": "A simple alternative to change your Krunker CSS! No code involved!",
+	"icons": {
+			"48": "icon48.png",
+			"128": "icon128.png" },
+	"permissions": [
+	  "tabs"
+	],
     "content_scripts": [
 		{
 		  "matches": ["*://*.krunker.io/*"],

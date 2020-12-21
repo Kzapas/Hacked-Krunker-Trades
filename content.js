@@ -5,8 +5,19 @@ var popout = document.getElementById("offerPop");
 var news = document.getElementById("newsHolder");
 var streams = document.getElementById("streamContainer");
 var menu = document.getElementsByClassName("menuItem");
-var img_to_replace = "https://assets.krunker.io/textures/previews/weapons/weapon_8_m0_79.png?build=M7e2y";
-var img_replacement = "https://assets.krunker.io/textures/previews/melee/melee_11.png?build=M7e2y";
+var profile = document.getElementById('profileImg');
+var img_to_replace = "https://assets.krunker.io/textures/previews/weapons/weapon_8_m0_79.png";
+var img_replacement = "https://assets.krunker.io/textures/previews/melee/melee_11.png";
+var build = "";
+
+//Get newest build method
+if (profile != null) {
+	window.setTimeout(function(){
+		var imgsrc = profile.src;
+		build = imgsrc.slice(53);
+		console.log(build);
+	}, 2000);
+}
 
 function updateImages() {
 	
@@ -15,7 +26,7 @@ function updateImages() {
 	}
 	
 	for (var i = 0; i < img2.length; i++) {
-	  if (img2[i].src == img_to_replace) {
+	  if (img2[i].src == img_to_replace + build) {
 		  img2[i].src = img_replacement;
 		  var par2 = img2[i].parentNode;
 		  var border2 = par2.getAttribute("style");
@@ -28,7 +39,7 @@ function updateImages() {
 	
 	for (var i = 0; i < img.length; i++) {
 	  if (popout.style.display != "none") {
-		  if (img[i].src == img_to_replace) {
+		  if (img[i].src == img_to_replace + build) {
 			  img[i].src = img_replacement;
 			  var par = img[i].parentNode;
 			  var border = par.getAttribute("style");
