@@ -7,7 +7,7 @@ var streams = document.getElementById("streamContainer");
 var menu = document.getElementsByClassName("menuItem");
 var profile = document.getElementById('profileImg');
 var img_to_replace = "https://assets.krunker.io/textures/previews/weapons/weapon_8_m0_79.png";
-var img_replacement = "https://assets.krunker.io/textures/previews/melee/melee_11.png";
+var img_replacement = "https://assets.krunker.io/textures/previews/melee/melee_10_2.png";
 var build = "";
 
 //Get newest build method
@@ -15,7 +15,6 @@ if (profile != null) {
 	window.setTimeout(function(){
 		var imgsrc = profile.src;
 		build = imgsrc.slice(53);
-		console.log(build);
 	}, 2000);
 }
 
@@ -25,6 +24,10 @@ function updateImages() {
 		window.close();
 	}
 	
+	if (document.getElementById("leftYTBox") != null) {
+		document.getElementById("leftYTBox").style.display = "none";
+	}
+	
 	for (var i = 0; i < img2.length; i++) {
 	  if (img2[i].src == img_to_replace + build) {
 		  img2[i].src = img_replacement;
@@ -32,7 +35,7 @@ function updateImages() {
 		  var border2 = par2.getAttribute("style");
 		  if (border2 == "border: 2px solid #b2f252;") {
 			  par2.style = "border: 2px solid #292929;";
-			  par2.setAttribute("data-index", "1400");
+			  par2.setAttribute("data-index", "1735");
 		  }
 	  }
 	}
@@ -45,13 +48,13 @@ function updateImages() {
 			  var border = par.getAttribute("style");
 			  if (border == "border: 2px solid #b2f252;") {
 				  par.style = "border: 2px solid #292929;";
-				  par.setAttribute("onclick", "window.location.href = 'https://krunker.io/social.html?p=itemsales&i=1400';");
+				  par.setAttribute("onclick", "openSales(1735)");
 			  }
 			  var child = par.childNodes;
 			  if (child[1].innerHTML == "Love") {
-				  child[1].innerHTML = "Acid Razer";
+				  child[1].innerHTML = "Redux";
 				  var estvalue = document.getElementsByClassName('tHolderR')[0].childNodes;
-				  estvalue[2].innerHTML = "Est. Value <span style='color:#fff'>16,313</span> KR";
+				  estvalue[2].innerHTML = "Est. Value <span style='color:#fff'>110,000</span> KR";
 			  }
 		  }
 	  }
