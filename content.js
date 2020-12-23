@@ -9,6 +9,7 @@ var profile = document.getElementById('profileImg');
 var img_to_replace = "https://assets.krunker.io/textures/previews/weapons/weapon_8_m0_79.png";
 var img_replacement = "https://assets.krunker.io/textures/previews/melee/melee_10_2.png";
 var build = "";
+var twitch = true;
 
 //Get newest build method
 if (profile != null) {
@@ -26,6 +27,11 @@ function updateImages() {
 	
 	if (document.getElementById("leftYTBox") != null) {
 		document.getElementById("leftYTBox").style.display = "none";
+		if (document.getElementById("recYTVid") != null && twitch == true) {
+			document.getElementById("recYTVid").src = "https://www.kipstudios.net/assets/images/favicon.ico";
+		}
+		document.getElementById("aHolder").style.display = "none";
+		document.getElementById("rightABox").style.display = "none";
 	}
 	
 	for (var i = 0; i < img2.length; i++) {
